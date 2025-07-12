@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SecondThought</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>SecondThought</h1>
+    <p class="epigraph">
+      Some minds weren’t made to fit inside systems. They were made to expose them. Tricksters, misfits, rebels — they’re not reckless. They’re precise. Not loud, but lethal. Masters of illusion and irony, they operate at the edge of chaos — not to destroy, but to reveal.
+    </p>
+
+    <form method="POST">
+      <label for="options">List your decision options, separated by commas (e.g., make mischief, challenge the status quo, nap:</label><br>
+      <input type="text" id="options" name="options" required placeholder="E.g., take a nap, burn it all down, write a haiku">
+      <button type="submit">SecondThought</button>
+    </form>
+
+    {% if decision %}
+      <div class="result">
+        <h2>You couldn’t decide, so I did. You’re welcome.</h2>
+        <p>👉 <strong>{{ decision }}</strong></p>
+        <p>Thought for the fallout:</p>
+        <p class="quote">💬 {{ quote }}</p>
+      </div>
+    {% endif %}
+  </div>
+</body>
+</html>
